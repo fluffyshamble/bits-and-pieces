@@ -1,5 +1,6 @@
 import random as rd
 
+
 def roll_dice(attack_army, defence_army):
     # roll dice
     if attack_army > 3:
@@ -20,24 +21,32 @@ def roll_dice(attack_army, defence_army):
     else:
         print "Invalid number of defence armies!"
 
-
-
-    for i in range (0, len(attack_dice) - 1):
+    for i in range (0, len(attack_dice)):
         attack_dice[i] = rd.randint(1, 6)
-    for i in range (0, len(defence_dice) - 1):
+    for i in range (0, len(defence_dice)):
         defence_dice[i] = rd.randint(1, 6)
-    att_sorted = sorted(attack_dice)
-    def_sorted = sorted(defence_dice)
+    att_sorted = sorted(attack_dice, reverse=True)
+    def_sorted = sorted(defence_dice, reverse=True)
     print "Attack scores: %s, " \
           "defence scores: %s" % (att_sorted, def_sorted)
 
-    for i in range(0, 2):
-        if def_sorted[i] >= att_sorted[i]:
-            attack_army -= 1
+    while attack_army > 0 or defence_army >= 0:
+        if attack_army > defence_army:
+            compare_length = len(defence_dice)
         else:
-            defence_army -= 1
+            compare_length = len(attack_dice)
+        for i in range(0, compare_length):
+            if def_sorted[i] >= att_sorted[i]:
+                attack_army -= 1
+            else:
+                defence_army -= 1
+    if attack_army > defence_army:
+        print "Attacker wins!"
+    else:
+        print "Defender wins!"
 
-roll_dice(5, 5)
+
+roll_dice(2, 5)
 
 
 
