@@ -6,7 +6,7 @@ def roll_dice(attack_army, defence_army):
     if attack_army > 3:
         attack_dice = [None] * 3
     elif attack_army == 3:
-        attack_dice = [None] *2
+        attack_dice = [None] * 2
     elif attack_army == 2:
         attack_dice = [None]
     else:
@@ -46,7 +46,7 @@ def roll_dice(attack_army, defence_army):
         print "Defender wins!"
 
 
-roll_dice(2, 5)
+roll_dice(5, 5)
 
 
 
