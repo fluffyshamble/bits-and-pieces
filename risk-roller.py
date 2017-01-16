@@ -1,5 +1,6 @@
 import random as rd
 
+
 def roll_dice(attack_army, defence_army):
     # roll dice
     if attack_army > 3:
@@ -20,11 +21,9 @@ def roll_dice(attack_army, defence_army):
     else:
         print "Invalid number of defence armies!"
 
-
-
-    for i in range (0, len(attack_dice) - 1):
+    for i in range (0, len(attack_dice)):
         attack_dice[i] = rd.randint(1, 6)
-    for i in range (0, len(defence_dice) - 1):
+    for i in range (0, len(defence_dice)):
         defence_dice[i] = rd.randint(1, 6)
     att_sorted = sorted(attack_dice)
     def_sorted = sorted(defence_dice)
