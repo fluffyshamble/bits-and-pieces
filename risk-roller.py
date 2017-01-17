@@ -39,7 +39,6 @@ while attack_army > 1 and defence_army > 0:
         compare_length = len(def_sorted)
     else:
         compare_length = len(att_sorted)
-    print "compare_length = %s" % compare_length
     for i in range(0, compare_length):
         if def_sorted[i] >= att_sorted[i]:
             attack_army -= 1
@@ -52,11 +51,4 @@ while attack_army > 1 and defence_army > 0:
 if attack_army > defence_army:
     print "Attacker wins!"
 else:
-    print "Defender wins!"
-
-
-
-
-
-
-
+    print "\nDefender wins!\n"
