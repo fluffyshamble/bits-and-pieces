@@ -2,7 +2,6 @@ import random as rd
 
 
 def roll_dice(attack_army, defence_army):
-    # roll dice
     for j in range(0, len(attack_dice)):
         attack_dice[j] = rd.randint(1, 6)
     for j in range(0, len(defence_dice)):
@@ -34,7 +33,7 @@ elif defence_army == 1:
 else:
     print "Invalid number of defence armies!"
 
-while attack_army > 0 and defence_army >= 0:
+while attack_army > 1 and defence_army > 0:
     att_sorted, def_sorted = roll_dice(attack_army, defence_army)
     if attack_army > defence_army:
         compare_length = len(def_sorted)
@@ -57,9 +56,6 @@ else:
 
 
 
-roll_dice(5, 5)
-
-# TODO: MAKE SURE DICE ARE ROLLED AFTER EACH ITERATION, i.e. put while loop outside of function and call roll_dice after each comparison
 
 
 
