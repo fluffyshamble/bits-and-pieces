@@ -15,26 +15,25 @@ def roll_dice(attack_army, defence_army):
 attack_army = int(raw_input("How many attacking armies are there?\n"))
 defence_army = int(raw_input("How many defending armies are there?\n"))
 
-if attack_army > 3:
-    attack_dice = [None] * 3
-elif attack_army == 3:
-    attack_dice = [None] * 2
-elif attack_army == 2:
-    attack_dice = [None]
-else:
-    print "You can't attack, invalid number of armies!"
-
-if defence_army >= 3:
-    defence_dice = [None] * 3
-elif defence_army == 2:
-    defence_dice = [None] * 2
-elif defence_army == 1:
-    defence_dice = [None]
-else:
-    print "Invalid number of defence armies!"
-
 while attack_army > 1 and defence_army > 0:
     att_sorted, def_sorted = roll_dice(attack_army, defence_army)
+    if attack_army > 3:
+        attack_dice = [None] * 3
+    elif attack_army == 3:
+        attack_dice = [None] * 2
+    elif attack_army == 2:
+        attack_dice = [None]
+    else:
+        print "You can't attack, invalid number of armies!"
+
+    if defence_army >= 3:
+        defence_dice = [None] * 3
+    elif defence_army == 2:
+        defence_dice = [None] * 2
+    elif defence_army == 1:
+        defence_dice = [None]
+    else:
+        print "Invalid number of defence armies!"
     if attack_army > defence_army:
         compare_length = len(def_sorted)
     else:
