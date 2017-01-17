@@ -30,16 +30,19 @@ def roll_dice(attack_army, defence_army):
     print "Attack scores: %s, " \
           "defence scores: %s" % (att_sorted, def_sorted)
 
-    while attack_army > 0 or defence_army >= 0:
+    while attack_army > 0 and defence_army >= 0:
         if attack_army > defence_army:
             compare_length = len(defence_dice)
         else:
             compare_length = len(attack_dice)
+        print "compare_length = %s" % compare_length
         for i in range(0, compare_length):
             if def_sorted[i] >= att_sorted[i]:
                 attack_army -= 1
+                print "Attack army: %s" % attack_army
             else:
                 defence_army -= 1
+                print "Defence army: %s" % defence_army
     if attack_army > defence_army:
         print "Attacker wins!"
     else:
@@ -47,6 +50,9 @@ def roll_dice(attack_army, defence_army):
 
 
 roll_dice(5, 5)
+
+# TODO: MAKE SURE DICE ARE ROLLED AFTER EACH ITERATION, i.e. put while loop outside of function and call roll_dice after each comparison
+
 
 
 
