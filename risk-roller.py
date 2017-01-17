@@ -1,7 +1,7 @@
 import random as rd
 
 
-def roll_dice(attack_army, defence_army):
+def roll_dice(attack_dice, defence_dice):
     for j in range(0, len(attack_dice)):
         attack_dice[j] = rd.randint(1, 6)
     for j in range(0, len(defence_dice)):
@@ -16,7 +16,6 @@ attack_army = int(raw_input("How many attacking armies are there?\n"))
 defence_army = int(raw_input("How many defending armies are there?\n"))
 
 while attack_army > 1 and defence_army > 0:
-    att_sorted, def_sorted = roll_dice(attack_army, defence_army)
     if attack_army > 3:
         attack_dice = [None] * 3
     elif attack_army == 3:
@@ -34,6 +33,9 @@ while attack_army > 1 and defence_army > 0:
         defence_dice = [None]
     else:
         print "Invalid number of defence armies!"
+
+    att_sorted, def_sorted = roll_dice(attack_dice, defence_dice)
+
     if attack_army > defence_army:
         compare_length = len(def_sorted)
     else:
